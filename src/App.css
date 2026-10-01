@@ -1,0 +1,721 @@
+/* =========================
+   Global
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   App Header
+========================= */
+
+.app-header {
+  background: white;
+  padding: 20px 35px;
+  border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color :#222
+}
+
+
+/* =========================
+   Navigation
+========================= */
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.app-nav button {
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  padding: 14px 24px;
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Dashboard */
+.app-nav button:nth-child(1) {
+  background: #3498db;
+}
+
+.app-nav button:nth-child(1):hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.app-nav button:nth-child(1):active {
+  transform: translateY(1px);
+}
+
+/* Transactions */
+.app-nav button:nth-child(2) {
+  background: #2ecc71;
+}
+
+.app-nav button:nth-child(2):hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.app-nav button:nth-child(2):active {
+  transform: translateY(1px);
+}
+
+/* Categories */
+.app-nav button:nth-child(3) {
+  background: #9b59b6;
+}
+
+.app-nav button:nth-child(3):hover {
+  background: #8e44ad;
+  transform: translateY(-2px);
+}
+
+.app-nav button:nth-child(3):active {
+  transform: translateY(1px);
+}
+
+/* Add Transaction */
+.app-nav button:nth-child(4) {
+  background: #e67e22;
+}
+
+.app-nav button:nth-child(4):hover {
+  background: #d35400;
+  transform: translateY(-2px);
+}
+
+.app-nav button:nth-child(4):active {
+  transform: translateY(1px);
+}
+/* =========================
+   General Page Headers
+========================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h2 {
+  margin-bottom: 5px;
+}
+
+.page-header p {
+  margin-top: 0;
+  color: #777;
+}
+
+.page-header button {
+  background: #222;
+  color: white;
+}
+
+.page-header button:hover {
+  background: #444;
+}
+
+
+/* =========================
+   Dashboard
+========================= */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  margin-top: 0;
+  color: #777;
+}
+
+.dashboard-header button {
+  background: #222;
+  color: white;
+}
+
+.dashboard-header button:hover {
+  background: #444;
+}
+
+
+/* =========================
+   Dashboard Cards
+========================= */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+.dashboard-card span {
+  color: #777;
+  font-size: 14px;
+}
+
+.dashboard-card h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   Dashboard Sections
+========================= */
+
+.dashboard-section {
+  background: white;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header button {
+  background: #f1f3f5;
+}
+
+.section-header button:hover {
+  background: #e2e6ea;
+}
+
+
+/* =========================
+   Transactions
+========================= */
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+}
+
+.transaction-row span {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+  font-size: 14px;
+}
+
+.income {
+  color: #159447;
+}
+
+.expense {
+  color: #d93636;
+}
+
+
+/* =========================
+   Empty State
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #777;
+}
+
+
+/* =========================
+   Add Transaction
+========================= */
+
+.add-transaction-page {
+  max-width: 700px;
+  margin: auto;
+}
+
+.transaction-form {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  min-width: 110px;
+}
+
+.save-button {
+  background: #222;
+  color: white;
+}
+
+.save-button:hover {
+  background: #444;
+}
+
+
+/* =========================
+   Category Summary
+========================= */
+
+.category-summary-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+.summary-section {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-top: 25px;
+  border: 1px solid #eee;
+}
+
+.summary-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-section-header h3 {
+  margin: 0;
+}
+
+.category-list {
+  margin-top: 5px;
+}
+
+.category-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.category-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================
+   Transactions Page
+========================= */
+
+.transactions-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+.transactions-section {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-top: 25px;
+  border: 1px solid #eee;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.transaction-details span {
+  color: #666;
+  font-size: 14px;
+}
+
+.transaction-details small {
+  color: #999;
+  font-size: 13px;
+}
+
+.transaction-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.transaction-actions > strong {
+  min-width: 110px;
+  text-align: right;
+}
+
+.delete-button {
+  background: #fff0f0;
+  color: #d00;
+  border: 1px solid #ffd0d0;
+}
+
+.delete-button:hover {
+  background: #ffe0e0;
+}
+
+
+/* =========================
+   LOW BALANCE MODE 😭
+========================= */
+
+.low-balance {
+  background: #fff4f4;
+  min-height: calc(100vh - 80px);
+}
+
+.low-balance .dashboard-card {
+  border-color: #ffd5d5;
+}
+
+.low-balance .dashboard-card:last-child {
+  background: #fff0f0;
+}
+
+.low-balance-message {
+  margin-top: 25px;
+  padding: 18px 22px;
+  border-radius: 12px;
+  background: #fff0f0;
+  border: 1px solid #ffd0d0;
+  color: #9c2f2f;
+}
+
+.low-balance-message strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+  .app-header {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .app-nav {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .app-content {
+    padding: 20px 15px;
+  }
+
+  .app-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .app-nav button {
+    min-width: 0;
+    width: 100%;
+    padding: 13px 10px;
+  }
+
+  .app-nav button:last-child {
+    grid-column: span 2;
+    width: 100%;
+  }
+}
+  .transaction-item {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .transaction-actions {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  /* =========================
+   LOGIN PAGE
+   ========================= */
+
+#formWrapper {
+  background: linear-gradient(
+    135deg,
+    #eef7fc 0%,
+    #d9edf8 50%,
+    #c5e5f5 100%
+  );
+
+  width: 100%;
+  min-height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+#form {
+  width: 360px;
+  max-width: calc(100% - 40px);
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo / title */
+
+div.logo {
+  text-align: center;
+  margin: 5px 0 35px 0;
+}
+
+div.logo h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #566375;
+}
+
+/* Form fields */
+
+div.form-item {
+  position: relative;
+  display: block;
+
+  margin-bottom: 28px;
+}
+
+input.form-style {
+  color: #555;
+
+  display: block;
+
+  width: 100%;
+  height: 48px;
+
+  padding: 5px 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ccc;
+
+  border-radius: 27px;
+
+  background-color: #fff;
+
+  font-family: "HelveticaNeue", Arial, sans-serif;
+
+  font-size: 16px;
+
+  letter-spacing: 0.4px;
+
+  transition: all 0.2s ease;
+}
+
+input.form-style:focus {
+  outline: none;
+
+  border: 1px solid #58bff6;
+
+  box-shadow: 0 0 0 3px rgba(88, 191, 246, 0.12);
+}
+
+/* Labels */
+
+.formLabel {
+  display: block;
+
+  margin-bottom: 8px;
+
+  padding-left: 16px;
+
+  color: #8a8a8a;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+/* Login button */
+
+button.login {
+  float: right;
+
+  width: 112px;
+  height: 40px;
+
+  border-radius: 20px;
+
+  background-color: #55b1df;
+
+  border: 1px solid #55b1df;
+
+  color: #fff;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+button.login:hover {
+  background-color: #fff;
+
+  border: 1px solid #55b1df;
+
+  color: #55b1df;
+}
+
+button.login:focus {
+  outline: none;
+}
+
+button.login:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
