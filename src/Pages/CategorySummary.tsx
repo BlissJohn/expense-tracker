@@ -11,6 +11,7 @@ const expenseCategories = [
   "Tech Accessories",
   "Non-Tech Accessories",
   "Groceries",
+  "Transportation",
   "Rent",
   "Personal Activities",
 ];

@@ -4,6 +4,7 @@ export type Category =
   | "Tech Accessories"
   | "Non-Tech Accessories"
   | "Groceries"
+  | "Transportation"
   | "Rent"
   | "Personal Activities"
   | "Salary Earned"

@@ -11,6 +11,7 @@ const expenseCategories = [
   "Alcohol",
   "Tech Accessories",
   "Non-Tech Accessories",
+  "Transportation",
   "Groceries",
   "Rent",
   "Personal Activities",
